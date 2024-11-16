@@ -9,7 +9,7 @@ import ClaimModal from "../claimModal/ClaimModal";
 const Navbar = () => {
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [remix, setRemix] = useState<string | null>(null);
-    const {userName, notifications, tokenCount} = useDataStore()
+    const {userName, notifications} = useDataStore()
 
     const [showNotifications, setShowNotifications] = useState(false);
     const [isClaimModalOpen, setIsClaimModalOpen] = useState(false);
@@ -48,7 +48,7 @@ const Navbar = () => {
                         className="flex items-center justify-center px-4 py-2 bg-purple-500 text-white rounded-full shadow-lg focus:outline-none"
                         title="Your token balance"
                     >
-                        <span className="mr-1">🪙</span> {tokenCount || 0}
+                        <span className="mr-1">🪙</span> 0
                     </button>
                 </div>
                 <div className="relative">

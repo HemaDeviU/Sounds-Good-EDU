@@ -39,7 +39,7 @@ const PodcastList = ({setIndex}: {setIndex: any}) => {
                     image="/vitalik-buterin.jpg"
                     title="Vitalik Buterin Podcast"
                     creator="Vitalik"
-                    audio="https://rose-melodic-felidae-510.mypinata.cloud/ipfs/bafkreifxp73smsvnm6hao2cibymgiksiyfevmks2qcmg7eawwdbbt5gsna"
+                    audio="/Vitalik Buterin on rBitcoin censorship.mp3"
                 />
 
                 

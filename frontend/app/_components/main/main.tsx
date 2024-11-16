@@ -25,7 +25,7 @@ const Main = ({index, setIndex}: {index: number, setIndex: any}) => {
             (async () => {
                 try {
                     // Using local file from public directory
-                    const fileUrl = '/Transcripts.txt'  // Adjust path based on your file location
+                    const fileUrl = '/Transcripts3.txt'  // Adjust path based on your file location
                     
                     const data = await fetch(fileUrl)
                     if (!data.ok) {
@@ -68,7 +68,7 @@ const Main = ({index, setIndex}: {index: number, setIndex: any}) => {
                                 />
                             </div>
                             <div>
-                                <h2 className="text-3xl font-bold">{podcastsData.length > index ? "The story of Vitalik Buterin" : "Loading..."}</h2>
+                                <h2 className="text-3xl font-bold">{podcastsData.length > index ? "Vitalik on Censorship Resistances" : "Loading..."}</h2>
                                 <p className="text-lg text-gray-400">Vitalik</p>
                                 <button className="mt-2 px-4 py-2 bg-purple-500 text-white rounded-full hover:bg-purple-600 transition-colors">
                                     Tip

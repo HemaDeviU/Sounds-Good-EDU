@@ -119,11 +119,8 @@ export const DataContextProvider = (props: Props) => {
                         args: [account.address]
                     }) as string
                     setUserName(res)
-
                 } catch (err) {
-                    const name = prompt("What user name would you like to use?") as string
-                    await writeContractHook(writeContract, abi, "registerUser", [name])
-                    setUserName(name)
+                    setUserName("")
                 }
                 console.log("here")
                 const events = await logEvents(
