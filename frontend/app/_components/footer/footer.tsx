@@ -68,7 +68,7 @@ const Footer = ({source, transcript, setCurrentLine}: {source: any, transcript: 
     </div>
     <div className="flex items-center mb-4">
       <span className="font-bold text-sm">0:00</span>
-      <input type="range" className="w-full mx-4" value={timestamp} onChange={(e) => {
+      <input type="range" className="w-full mx-4 bg-purple`" value={timestamp} onChange={(e) => {
         console.log(e.target.value)
         const audio = document.getElementById("audio") as any
         setTimestamp(parseFloat(e.target.value))

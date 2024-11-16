@@ -35,14 +35,14 @@ const Sidebar = ({index, setIndex}: {index: number, setIndex: any}) => {
 
                     </div>
                     <div className="flex space-x-8 ml-auto pb-4">
-                        <button className="text-blue-500" onClick={() => {
+                        <button className="text-purple-500" onClick={() => {
                             setIndex((index-1+podcastsData.length) % podcastsData.length)
                         }}>
                             <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" viewBox="0 0 24 24" fill="currentColor">
                                 <path d="M10 19l-7-7 7-7v14zm9-14h-2v14h2v-14z" />
                             </svg>
                         </button>
-                        <button className="text-white bg-blue-500 rounded-full p-4" onClick={() => {
+                        <button className="text-white bg-purple-500 rounded-full p-4" onClick={() => {
                             if (!isPlaying) {
                                 const audio = document.getElementById("audio") as any
                                 console.log(audio)
@@ -70,7 +70,7 @@ const Sidebar = ({index, setIndex}: {index: number, setIndex: any}) => {
                                 </svg>
                             )}
                         </button>
-                        <button className="text-blue-500" onClick={() => {
+                        <button className="text-purple-500" onClick={() => {
                             setIndex((index+1) % podcastsData.length)
                         }}>
                             <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" viewBox="0 0 24 24" fill="currentColor">

@@ -4,13 +4,15 @@ import Modal from "../modal/modal";
 import { ConnectButton } from '@rainbow-me/rainbowkit';
 import { useDataStore } from "@/app/_context/data";
 import NotificationBox from "../_notifications/notifications";
+import ClaimModal from "../claimModal/ClaimModal";
 
 const Navbar = () => {
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [remix, setRemix] = useState<string | null>(null);
-    const {userName, notifications} = useDataStore()
+    const {userName, notifications, tokenCount} = useDataStore()
 
     const [showNotifications, setShowNotifications] = useState(false);
+    const [isClaimModalOpen, setIsClaimModalOpen] = useState(false);
   const handleToggleNotifications = () => {
     setShowNotifications(!showNotifications);
   };
@@ -23,6 +25,15 @@ const Navbar = () => {
         setRemix(null)
         setIsModalOpen(false);
     }
+
+    const openClaimModal = () => {
+        setIsClaimModalOpen(true);
+    }
+    
+    const closeClaimModal = () => {
+        setIsClaimModalOpen(false);
+    }
+
     return (
         <div className="flex flex-row w-full p-5 gap-20 justify-between items-center">
             <div className="flex flex-row gap-2 flex-grow items-center">
@@ -34,7 +45,15 @@ const Navbar = () => {
                 </div>
                 <div className="relative">
                     <button
-                        className="flex items-center justify-center p-3 bg-blue-500 text-white rounded-full shadow-lg focus:outline-none"
+                        className="flex items-center justify-center px-4 py-2 bg-purple-500 text-white rounded-full shadow-lg focus:outline-none"
+                        title="Your token balance"
+                    >
+                        <span className="mr-1">🪙</span> {tokenCount || 0}
+                    </button>
+                </div>
+                <div className="relative">
+                    <button
+                        className="flex items-center justify-center p-3 bg-purple-500 text-white rounded-full shadow-lg focus:outline-none"
                         onClick={openModal}
                     >
                         <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -43,8 +62,18 @@ const Navbar = () => {
                     </button>
 
                 </div>
+                <div className="relative">
+                    <button
+                        className="flex items-center justify-center p-3 bg-purple-500 text-white rounded-full shadow-lg focus:outline-none"
+                        onClick={openClaimModal}
+                    >
+                        <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                    </button>
+                </div>
                 <div className="relative" onClick={handleToggleNotifications}>
-                    <button className="flex items-center justify-center p-3 bg-white text-blue-500 rounded-full hover:bg-gray-200 focus:outline-none ring-2 ring-blue-500 shadow-lg">
+                    <button className="flex items-center justify-center p-3 bg-white text-purple-500 rounded-full hover:bg-gray-200 focus:outline-none ring-2 ring-purple-500 shadow-lg">
                         <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6 6 0 00-5-5.917V4a1 1 0 00-2 0v1.083A6 6 0 006 11v3.159c0 .538-.214 1.055-.595 1.437L4 17h5m6 0a3 3 0 01-6 0" />
                         </svg>
@@ -65,6 +94,7 @@ const Navbar = () => {
                 </div>
             )}
             <Modal isOpen={isModalOpen} onClose={closeModal} remix={remix}/>
+            <ClaimModal isOpen={isClaimModalOpen} onClose={closeClaimModal} remix={remix} />
 
             <ConnectButton.Custom>
             {({
@@ -96,7 +126,7 @@ const Navbar = () => {
                         userSelect: 'none',
                     },
                     })}
-                    className="bg-blue-500 rounded-full p-2 w-48 shadow-lg flex items-center justify-center font-bold text-white"
+                    className="bg-purple-500 rounded-full p-2 w-48 shadow-lg flex items-center justify-center font-bold text-white"
                 >
                     {(() => {
                     if (!connected) {

@@ -70,6 +70,9 @@ const Main = ({index, setIndex}: {index: number, setIndex: any}) => {
                             <div>
                                 <h2 className="text-3xl font-bold">{podcastsData.length > index ? "The story of Vitalik Buterin" : "Loading..."}</h2>
                                 <p className="text-lg text-gray-400">Vitalik</p>
+                                <button className="mt-2 px-4 py-2 bg-purple-500 text-white rounded-full hover:bg-purple-600 transition-colors">
+                                    Tip
+                                </button>
                             </div>
                         </div>
                         <div className="flex flex-col bg-white/80 backdrop-blur backdrop-saturate-200 h-full rounded-lg p-4 h-64 overflow-y-auto font-bold text-xl gap-5 justify-center">

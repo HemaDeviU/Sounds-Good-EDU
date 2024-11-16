@@ -117,7 +117,7 @@ const Modal = ({ isOpen, onClose, remix }: {isOpen: boolean, onClose: any, remix
                 id="parent"
                 value={podcastsData.filter(data => data.ipId === remix)[0].name}
                 disabled
-                className="w-full p-3 border rounded-lg focus:outline-none focus:border-blue-500"
+                className="w-full p-3 border rounded-lg focus:outline-none focus:border-purple-500"
               />
             </div>
           )}
@@ -131,7 +131,7 @@ const Modal = ({ isOpen, onClose, remix }: {isOpen: boolean, onClose: any, remix
               id="podcastName"
               value={podcastName}
               onChange={handlePodcastNameChange}
-              className="w-full p-3 border rounded-lg focus:outline-none focus:border-blue-500"
+              className="w-full p-3 border rounded-lg focus:outline-none focus:border-purple-500"
               placeholder="Enter podcast name"
             />
           </div>
@@ -171,7 +171,7 @@ const Modal = ({ isOpen, onClose, remix }: {isOpen: boolean, onClose: any, remix
               MP3 File
             </label>
             <div className="flex items-center">
-              <label className="w-full p-3 border rounded-lg cursor-pointer focus:outline-none focus:border-blue-500 bg-gray-100 text-gray-700 hover:bg-gray-200">
+              <label className="w-full p-3 border rounded-lg cursor-pointer focus:outline-none focus:border-purple-500 bg-gray-100 text-gray-700 hover:bg-gray-200">
                 <input
                   required
                   type="file"
@@ -189,7 +189,7 @@ const Modal = ({ isOpen, onClose, remix }: {isOpen: boolean, onClose: any, remix
               Cover Image
             </label>
             <div className="flex items-center">
-              <label className="w-full p-3 border rounded-lg cursor-pointer focus:outline-none focus:border-blue-500 bg-gray-100 text-gray-700 hover:bg-gray-200">
+              <label className="w-full p-3 border rounded-lg cursor-pointer focus:outline-none focus:border-purple-500 bg-gray-100 text-gray-700 hover:bg-gray-200">
                 <input
                   required
                   type="file"
@@ -204,10 +204,10 @@ const Modal = ({ isOpen, onClose, remix }: {isOpen: boolean, onClose: any, remix
           </div>
           <div className="mb-4">
             <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="transcriptsFile">
-              Transcripts File {"("}<Link className='text-blue-500' href={"https://rose-melodic-felidae-510.mypinata.cloud/ipfs/bafkreif2ybsgg3xe5heuswf6j2x2d2luji35gjzsn5uih5ujlbcnvys7di"} target='blank'>Sample</Link>{")"}
+              Transcripts File {"("}<Link className='text-purple-500' href={"https://rose-melodic-felidae-510.mypinata.cloud/ipfs/bafkreif2ybsgg3xe5heuswf6j2x2d2luji35gjzsn5uih5ujlbcnvys7di"} target='blank'>Sample</Link>{")"}
             </label>
             <div className="flex items-center">
-              <label className="w-full p-3 border rounded-lg cursor-pointer focus:outline-none focus:border-blue-500 bg-gray-100 text-gray-700 hover:bg-gray-200">
+              <label className="w-full p-3 border rounded-lg cursor-pointer focus:outline-none focus:border-purple-500 bg-gray-100 text-gray-700 hover:bg-gray-200">
                 <input
                   required
                   type="file"
@@ -231,7 +231,7 @@ const Modal = ({ isOpen, onClose, remix }: {isOpen: boolean, onClose: any, remix
             <button
               type="submit"
               disabled={isLoading || isConfirming}
-              className="bg-blue-500 text-white px-4 py-2 rounded-lg focus:outline-none hover:bg-blue-600"
+              className="bg-purple-500 text-white px-4 py-2 rounded-lg focus:outline-none hover:bg-purple-600"
             >
               {isLoading || isConfirming ? "Uploading ..." : "Submit"}
             </button>
