@@ -11,9 +11,9 @@ import "@openzeppelin/contracts/token/ERC721/extensions/ERC721Burnable.sol";
 contract GoodNFT is ERC721, ERC721URIStorage, ERC721Pausable, Ownable, ERC721Burnable {
     uint256 private _nextTokenId;
 
-    constructor(address initialOwner)
+    constructor()
         ERC721("Good", "GOOD")
-        Ownable(initialOwner)
+        Ownable(msg.sender)
     {}
 
     function pause() public onlyOwner {
@@ -56,5 +56,9 @@ contract GoodNFT is ERC721, ERC721URIStorage, ERC721Pausable, Ownable, ERC721Bur
         returns (bool)
     {
         return super.supportsInterface(interfaceId);
+    }
+
+    function transferOwnership(address newOwner) public override onlyOwner {
+        super.transferOwnership(newOwner);
     }
 }

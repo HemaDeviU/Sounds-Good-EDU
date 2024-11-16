@@ -9,9 +9,9 @@ import "@openzeppelin/contracts/access/Ownable.sol";
 import "@openzeppelin/contracts/token/ERC20/extensions/ERC20Permit.sol";
 
 contract SoundToken is ERC20, ERC20Burnable, ERC20Pausable, Ownable, ERC20Permit {
-    constructor(address initialOwner)
+    constructor()
         ERC20("SOUND", "SND")
-        Ownable(initialOwner)
+        Ownable(msg.sender)
         ERC20Permit("SOUND")
     {}
 
@@ -35,4 +35,8 @@ contract SoundToken is ERC20, ERC20Burnable, ERC20Pausable, Ownable, ERC20Permit
     {
         super._update(from, to, value);
     }
+    function transferOwnership(address newOwner) public override onlyOwner {
+        super.transferOwnership(newOwner);
+    }
 }
+

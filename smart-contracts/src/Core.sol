@@ -10,6 +10,7 @@ contract Core is ReentrancyGuard {
         uint256 episodeId;
         string metadataURI;
         address creator; 
+        bool premium;
     }
 
     struct ListenRewards {
@@ -24,6 +25,7 @@ contract Core is ReentrancyGuard {
 
     SoundToken public soundToken;
     GoodNFT public goodNFT;
+    uint256 public immutable burnAmount = 2;
 
     event EpisodeCreated(uint256 episodeId);
     event TokensClaimed(address indexed listener, uint256 episodeId, uint256 amount);
@@ -31,13 +33,14 @@ contract Core is ReentrancyGuard {
     mapping(address => ListenRewards) public listenRewards;
 
 
-    function createEpisodeandMintNFT(string memory _metadata) external returns (uint256)
+    function createEpisodeandMintNFT(string memory _metadata, bool _premium) external returns (uint256)
     {
         uint256 id =goodNFT.safeMint(msg.sender,_metadata);
         episodes[id] = Episode({
             episodeId: id,
             metadataURI: _metadata,
-            creator: msg.sender
+            creator: msg.sender,
+            premium: _premium
         });
         emit EpisodeCreated(id);
         return id;
@@ -47,12 +50,22 @@ contract Core is ReentrancyGuard {
     function claimToken(uint256 episodeId) nonReentrant external returns (uint256)
 {
     require(_exists(episodeId),"episode doesn't exists");
+    require(episodes[episodeId].premium,"Episode is not premium");
     address listener = msg.sender;
     require(!listenRewards[listener].hasListened[episodeId],"You have already listened to this episode"); 
     listenRewards[listener].hasListened[episodeId] = true;
     listenRewards[listener].rewards += 1;
     emit TokensClaimed(msg.sender, episodeId, 1);
     return listenRewards[listener].rewards;
+}
+
+function listenPremium(uint256 episodeId) external nonReentrant{
+    require(_exists(episodeId),"episode doesn't exists");
+    require(episodes[episodeId].premium,"Episode is not premium");
+    address listener = msg.sender;
+    soundToken.burnFrom(listener,burnAmount);    
+    emit TokensClaimed(msg.sender, episodeId, 0);
+         
 }
     function tipCreator(address creator, uint256 amount) external nonReentrant{
         require(soundToken.balanceOf(msg.sender)>= amount,"Insufficient balance");
