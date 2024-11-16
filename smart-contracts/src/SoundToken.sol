@@ -8,7 +8,7 @@ import "@openzeppelin/contracts/token/ERC20/extensions/ERC20Pausable.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
 import "@openzeppelin/contracts/token/ERC20/extensions/ERC20Permit.sol";
 
-contract SOUND is ERC20, ERC20Burnable, ERC20Pausable, Ownable, ERC20Permit {
+contract SoundToken is ERC20, ERC20Burnable, ERC20Pausable, Ownable, ERC20Permit {
     constructor(address initialOwner)
         ERC20("SOUND", "SND")
         Ownable(initialOwner)

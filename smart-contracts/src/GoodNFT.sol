@@ -8,7 +8,7 @@ import "@openzeppelin/contracts/token/ERC721/extensions/ERC721Pausable.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
 import "@openzeppelin/contracts/token/ERC721/extensions/ERC721Burnable.sol";
 
-contract Good is ERC721, ERC721URIStorage, ERC721Pausable, Ownable, ERC721Burnable {
+contract GoodNFT is ERC721, ERC721URIStorage, ERC721Pausable, Ownable, ERC721Burnable {
     uint256 private _nextTokenId;
 
     constructor(address initialOwner)
@@ -25,7 +25,7 @@ contract Good is ERC721, ERC721URIStorage, ERC721Pausable, Ownable, ERC721Burnab
     }
 
     function safeMint(address to, string memory uri) public onlyOwner returns (uint256 tokenId) {
-        uint256 tokenId = _nextTokenId++;
+         tokenId = _nextTokenId++;
         _safeMint(to, tokenId);
         _setTokenURI(tokenId, uri);
     }
