@@ -30,6 +30,24 @@ They can also use the token to tip the creators they enjoy as a way to support t
 
 
 
+### Chronicles
+Ethereum Sepolia:
+  SoundToken deployed to: 0x014Ee510779931e6d93d5fA9F37D2D08c4EE48E2
+  GoodNFT deployed to: 0x0E6E5a1Baa4768668976070138392e9b2f9Ab432
+  Core deployed to: 0x8c600CaA1c5FC277165dB457e88b6D83Fb85Ba68
+
+  A public demo URL to your deployed project that judges can test.
+A short video that demonstrates your submission (approximately 2-3 minutes).
+A public GitHub repository with the code.
+Complete the 2-min Builder Feedback Form: https://forms.gle/EZiu96gfhBBnwuAQ8
+🎯 Judging Criteria
+
+Code quality - well organized and readable code will score higher.
+Documentation - the better the documentation the higher the score.
+Extensibility - how easy can a developer use this to build out their own idea?
+DX - does the project provide a high quality developer experience?
+UI/UX - Projects with an intuitive UI will score higher.
+
 
 
 ## The RoadMap
