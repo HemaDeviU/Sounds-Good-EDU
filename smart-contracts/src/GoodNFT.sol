@@ -24,7 +24,7 @@ contract Good is ERC721, ERC721URIStorage, ERC721Pausable, Ownable, ERC721Burnab
         _unpause();
     }
 
-    function safeMint(address to, string memory uri) public onlyOwner {
+    function safeMint(address to, string memory uri) public onlyOwner returns (uint256 tokenId) {
         uint256 tokenId = _nextTokenId++;
         _safeMint(to, tokenId);
         _setTokenURI(tokenId, uri);
