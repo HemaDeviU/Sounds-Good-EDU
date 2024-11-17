@@ -48,6 +48,21 @@ Extensibility - how easy can a developer use this to build out their own idea?
 DX - does the project provide a high quality developer experience?
 UI/UX - Projects with an intuitive UI will score higher.
 
+### Flow
+  SoundToken deployed to: 0x14D9F6f3d6e34bb50ef011296B6D66Acb3375C12
+  GoodNFT deployed to: 0xb92E8877f6a466863765Bd36A394D826091b4000
+  Core deployed to: 0xAD8D4D621933789513ac3e6703faCb7B227Dd3C3
+
+### Blockscout
+Ethereum Sepolia:
+  SoundToken deployed to: 0x014Ee510779931e6d93d5fA9F37D2D08c4EE48E2 
+  BlockScout: https://eth-sepolia.blockscout.com/address/0x014Ee510779931e6d93d5fA9F37D2D08c4EE48E2
+  
+  GoodNFT deployed to: 0x0E6E5a1Baa4768668976070138392e9b2f9Ab432
+  https://eth-sepolia.blockscout.com/address/0x0E6E5a1Baa4768668976070138392e9b2f9Ab432
+  
+  Core deployed to: 0x8c600CaA1c5FC277165dB457e88b6D83Fb85Ba68
+   https://eth-sepolia.blockscout.com/address/0x8c600CaA1c5FC277165dB457e88b6D83Fb85Ba68
 
 
 ## The RoadMap
