@@ -1,10 +1,7 @@
 # Sounds Good
 
 Listen-to-Earn Podcast Streaming Dapp with decentralized streaming. It lets the user earn tokens for listneing each episode and also support the creators with tips.
-I am a creator and I understand the challenges of creating audio content on regional language. In countries like India with multiple regional languages with large population, the top straming dapps only feature one chosen language in the country's top 10 playlists, due to political and economic influcene, even if an artist bypasses the bar for top streams.
-This was highlighted by a regional artist naming one of the top web2 streaming platforms. Ironically, that video was also removed due to censorship.
 
-Sounds Good is an onchain podcast streaming platform that refuses to get censored. :)
 
 Sounds Good for Creators:
 
