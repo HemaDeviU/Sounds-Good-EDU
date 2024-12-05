@@ -36,10 +36,10 @@ const PodcastList = ({setIndex}: {setIndex: any}) => {
                 <PodcastTile
                     setIndex={() => setIndex(index)}
                     key={index}
-                    image="/vitalik-buterin.jpg"
-                    title="Vitalik Buterin Podcast"
-                    creator="Vitalik"
-                    audio="/Vitalik Buterin on rBitcoin censorship.mp3"
+                    image="/Cover.jpg"
+                    title="We3 Stories"
+                    creator="Block Labs"
+                    audio="/Bitcoin-halving-and-beyond.mp3"
                 />
 
                 

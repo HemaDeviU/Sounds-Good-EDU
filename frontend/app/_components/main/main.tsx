@@ -62,14 +62,14 @@ const Main = ({index, setIndex}: {index: number, setIndex: any}) => {
                         <div className="flex items-center mb-4 gap-5">
                             <div className="w-48 h-48 flex items-center bg-gray-200 rounded-lg overflow-hidden">
                                 <img 
-                                    src="/vitalik-buterin.jpg" 
+                                    src="/Cover.jpg" 
                                     alt="Album Art" 
                                     className="w-full h-full object-cover rounded-lg"
                                 />
                             </div>
                             <div>
-                                <h2 className="text-3xl font-bold">{podcastsData.length > index ? "Vitalik on Censorship Resistances" : "Loading..."}</h2>
-                                <p className="text-lg text-gray-400">Vitalik</p>
+                                <h2 className="text-3xl font-bold">{podcastsData.length > index ? "Bitcoin: Halving and Beyond" : "Loading..."}</h2>
+                                <p className="text-lg text-gray-400">Block Labs</p>
                                 <button className="mt-2 px-4 py-2 bg-purple-500 text-white rounded-full hover:bg-purple-600 transition-colors">
                                     Tip
                                 </button>

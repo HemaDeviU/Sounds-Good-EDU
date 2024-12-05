@@ -29,8 +29,8 @@ const Sidebar = ({index, setIndex}: {index: number, setIndex: any}) => {
                 <div className="flex flex-col space-x-4 items-center justify-between rounded-lg shadow-lg flex-grow">
                     <div className="flex flex-row justify-between">
                         <div className="p-6 pr-0 flex flex-col gap-3">
-                            <h3 className="text-lg font-semibold">{podcastsData.length > index && "The story of Vitalik Buterin"}</h3>
-                            <p className="text-sm">{podcastsData.length > index && "Vitalik"}</p>
+                            <h3 className="text-lg font-semibold">{podcastsData.length > index && "Bitcoin: Halving and Beyond"}</h3>
+                            <p className="text-sm">{podcastsData.length > index && "Block Labs"}</p>
                         </div>
 
                     </div>
