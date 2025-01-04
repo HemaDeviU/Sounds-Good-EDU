@@ -1,12 +1,17 @@
 # Sounds Good
 
-Listen-to-Earn Podcast Streaming Dapp with decentralized streaming. It lets the user earn tokens for listneing each episode and also support the creators with tips.
+Listen-to-Earn Podcast Streaming Dapp with decentralized streaming of educational content as podcasts. It lets the student earn tokens for listneing each episode and also support the creators or tutor with tips.
 
 ## Contracts Deployed on Educhain Testnet
 
  - Sound Token: 0xbFCf3b11A1cA70d58e07e9f09b1A1E108f0894D7
  - GoodNFT: 0xc7aDbCdCBecC7cc02b3faF007b1A397AA528913E
  - Core: 0xf3eCF2471Da44046F1e5a5bb17C8244D4e72E9EB
+
+![SoundsGood](https://raw.githubusercontent.com/HemaDeviU/Sounds-Good-EDU/48f2bc7481eb0c14447b0225dca356cb48449c86/images/SoundsGood.jpg)
+
+## Pitch Deck 
+images/Sounds-Good-Pitch-Deck.pdf
 
 Sounds Good for Creators:
 
