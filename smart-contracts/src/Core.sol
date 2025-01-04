@@ -5,17 +5,7 @@ import "./SoundToken.sol";
 import "./GoodNFT.sol";
 import "@openzeppelin/contracts/utils/ReentrancyGuard.sol";
 
-interface TokenInterface {
-    function mint(address account, uint256 amount) external;
-}
 
-interface IChronicle {
-    function read() external view returns (uint256 value);
-}
-
-interface ISelfKisser {
-    function selfKiss(address oracle) external;
-} 
 
 contract Core is ReentrancyGuard {
     struct Episode{
@@ -33,19 +23,14 @@ contract Core is ReentrancyGuard {
     constructor(address _soundToken, address _goodNFT){
         soundToken = SoundToken(_soundToken);
         goodNFT = GoodNFT(_goodNFT);
-    selfKisser = ISelfKisser(address(0x0Dcc19657007713483A5cA76e6A7bbe5f56EA37d));
-    chronicle = IChronicle(address(0xdd6D76262Fd7BdDe428dcfCd94386EbAe0151603));
-    selfKisser.selfKiss(address(chronicle)); 
 
     }
 
 
     SoundToken public soundToken;
     GoodNFT public goodNFT;
-   IChronicle public chronicle; 
-    ISelfKisser public selfKisser;
+ 
 
-    TokenInterface public minter;
     
     uint256 public immutable burnAmount = 2;
 
@@ -113,18 +98,7 @@ contract Core is ReentrancyGuard {
    
      
 
-    function _read() internal view returns (uint256 val) {
-        val = chronicle.read();
-    }
 
-    function mintSoundToken() external payable{
-    
-        require(msg.value > 0, "Must send ETH to mint tokens");
-        uint256 ethUsd = _read(); 
-        uint256 amountUSD = (msg.value * ethUsd) / 10 ** 18; 
-        uint256 amountToken = amountUSD / 10 ** 18; 
-        soundToken.mint(msg.sender,amountToken);
-    } 
 
    
 }
